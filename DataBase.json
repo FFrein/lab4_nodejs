@@ -1,13 +1,8 @@
 [
   {
-    "id": 1,
-    "name": "john",
-    "number": 30
-  },
-  {
-    "id": 2,
-    "name": "john",
-    "number": 302
+    "id": "1",
+    "name": "johnasf",
+    "number": "30"
   },
   {
     "id": 3,
@@ -33,11 +28,6 @@
     "id": 7,
     "name": "john",
     "number": 3025
-  },
-  {
-    "id": 8,
-    "name": "john",
-    "number": 3026
   },
   {
     "id": 9,
