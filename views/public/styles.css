@@ -1,0 +1,64 @@
+/* styles.css */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.NumbersBook{
+    display: block;
+    padding: 100px 100px 0 100px;
+}
+
+.Menu {
+    display: flex;
+    padding: 5px 100px;
+}
+
+.Menu *{
+    width: 100%;
+}
+
+.ElemString{
+    text-align: left;
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+}
+
+.ElemString:hover{
+    border: 1px solid #ccc;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    background-color: grey;
+}
+
+.elem{
+    flex:content;
+}
+
+button{
+    border: 1px solid #ccc;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+}
+button:hover{
+    border: 1px solid #ccc;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    background-color: grey;
+}
+
+ul {
+    max-height: 300px; /* Ограничение ширины div */
+    overflow-y: auto; /* Включение вертикального скролла, если содержимое не помещается */
+    border: 1px solid #ccc;
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+}

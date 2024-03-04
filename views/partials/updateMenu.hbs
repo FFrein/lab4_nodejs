@@ -1,0 +1,34 @@
+<div>
+    <form action="/page/update" method="POST">
+
+        <div class="Menu">
+            <input type="hidden" name="id" value="{{user.id}}">
+            <input value="{{user.name}}" name="name" type="name" placeholder="Имя" >
+            <input value="{{user.number}}" name="number" type="number" placeholder="Номер" >
+       </div>
+
+        <div class="Menu">
+            <button type="Submit">Изменить</button>
+            <button type="button" onclick="deleteUser('{{user.id}}')">Удалить</button>
+            <button type="button" onclick="{{exit}}">Отказаться</button>
+        </div>
+
+    </form>
+</div>
+<script>
+    function deleteUser(userId) {
+        // Используем fetch для отправки запроса на удаление
+        fetch(`/page/delete/${userId}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Обработка ответа, если необходимо
+            console.log(data);
+        })
+        .catch(error => {
+            // Обработка ошибок
+            console.error('Error:', error);
+        });
+    }
+</script>
