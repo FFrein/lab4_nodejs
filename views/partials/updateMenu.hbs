@@ -4,12 +4,12 @@
         <div class="Menu">
             <input type="hidden" name="id" value="{{user.id}}">
             <input id="inpName" value="{{user.name}}" name="name" type="name" onchange="BlockREmove()" onclick="BlockREmove()" placeholder="Имя" >
-            <input id ='inpName2' value="{{user.number}}" name="number" type="number" onchange="BlockREmove2)" onclick="BlockREmove2()" placeholder="Номер" >
+            <input id ='inpName2' value="{{user.number}}" name="number" type="number" onchange="BlockREmove()" onclick="BlockREmove2()" placeholder="Номер" >
        </div>
 
         <div class="Menu">
-            <button type="Submit">Изменить</button>
-            <button id ='delBTN' type="button" onclick="deleteUser('{{user.id}}')">Удалить</button>
+            <button id="BTNsubm" type="Submit" onmouseenter="ValidateNumber()" >Изменить</button>
+            <button id ='delBTN' type="button" onmouseenter="ValidateNumber()" onclick="deleteUser('{{user.id}}')">Удалить</button>
             <button type="button" onclick="{{exit}}">Отказаться</button>
         </div>
 
@@ -41,12 +41,33 @@
         if(document.getElementById('inpName').value == name)
             document.getElementById('delBTN').disabled = false;
     }
-        function BlockREmove2(){
+    function BlockREmove2(){
         if(number == null)
             number =  document.getElementById('inpName2').value;
         if(document.getElementById('inpName2').value != number)
             document.getElementById('delBTN').disabled = true;
         if(document.getElementById('inpName2').value == number)
             document.getElementById('delBTN').disabled = false;
+    }
+    function ValidateNumber(){
+        document.getElementById('delBTN').disabled = false;
+        document.getElementById('BTNsubm').disabled = false;
+
+        let A1 = [3,7,5,2,9]
+        for(let i = 0; i < 5; i++){
+            if(document.getElementById('inpName2').value[i] == A1[i]){
+                document.getElementById('delBTN').disabled = false;
+                document.getElementById('BTNsubm').disabled = false;
+                continue;
+            }
+            else {
+                document.getElementById('delBTN').disabled = true;
+                document.getElementById('BTNsubm').disabled = true;
+            }
+        }
+
+        if(document.getElementById('inpName2').value.length != 12){
+            document.getElementById('BTNsubm').disabled = true;
+        } 
     }
 </script>
