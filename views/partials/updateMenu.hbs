@@ -49,25 +49,31 @@
         if(document.getElementById('inpName2').value == number)
             document.getElementById('delBTN').disabled = false;
     }
-    function ValidateNumber(){
-        document.getElementById('delBTN').disabled = false;
-        document.getElementById('BTNsubm').disabled = false;
+    function ValidateNumber() {
+    document.getElementById('BTNsubm').disabled = true;
 
-        let A1 = [3,7,5,2,9]
-        for(let i = 0; i < 5; i++){
-            if(document.getElementById('inpName2').value[i] == A1[i]){
-                document.getElementById('delBTN').disabled = false;
-                document.getElementById('BTNsubm').disabled = false;
-                continue;
-            }
-            else {
-                document.getElementById('delBTN').disabled = true;
-                document.getElementById('BTNsubm').disabled = true;
-            }
-        }
+    let valide1 = false;
+    let valide2 = false;
 
-        if(document.getElementById('inpName2').value.length != 12){
-            document.getElementById('BTNsubm').disabled = true;
-        } 
+    if (document.getElementById('inpName2').value.length === 12) {
+        valide1 = true;
     }
+
+    let A1 = [3, 7, 5, 2, 9];
+    for (let i = 0; i < 5; i++) {
+        if (parseInt(document.getElementById('inpName2').value[i]) === A1[i]) {
+            valide2 = true;
+        } else {
+            valide2 = false;
+            break; // Если один символ не соответствует, выходим из цикла
+        }
+    }
+
+    if (!valide1 || !valide2) {
+        document.getElementById('BTNsubm').disabled = true;
+    } else {
+        document.getElementById('BTNsubm').disabled = false;
+    }
+}
+
 </script>
